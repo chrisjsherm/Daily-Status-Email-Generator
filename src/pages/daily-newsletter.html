@@ -1,0 +1,54 @@
+---
+subject: Front End Status
+---
+
+<container>
+
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns>
+      <h1 class="text-center">{{subject}}</h1>
+      <spacer size="16"></spacer>
+
+      <p class="lead">
+        Daily Update
+      </p>
+      {{#each status}}
+      {{#each this }}
+      {{#if @first}}
+      <p>
+        {{ this }}
+      </p>
+      <ul>
+        {{else if @last}}
+        <li>
+          {{ this }}
+        </li>
+      </ul>
+      {{else}}
+      <li>
+        {{ this }}
+      </li>
+      {{/if}}
+      {{/each}}
+      <spacer size="16"></spacer>
+      {{/each}}
+
+      <row>
+        <columns large="6">
+          <h4>Links</h4>
+          <ul>
+            {{#each links}}
+            <li>
+              <a href="{{this}}">
+                {{@key}}
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </columns>
+      </row>
+    </columns>
+  </row>
+</container>
