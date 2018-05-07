@@ -1,3 +1,7 @@
+# Custom ignores.
+src/data/
+
+# Foundation Email ignores.
 .DS_Store
 node_modules
 npm-debug.log
